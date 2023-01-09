@@ -1,38 +1,50 @@
-.App {
-  text-align: center;
+.truck-container {
+    /* background-color: red; */
+    height: 50vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.truck {
+    height: 20%;
+    position: relative;
+    transition: 0.8s;
+    animation: move-right 10s linear infinite, move-up 1s ease-in-out infinite,
+        rotate 2s linear infinite;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.truck:hover {
+    transform: scale(1.3) rotate(6.284rad);
+    /* transform: rotate(6.284rad); */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@keyframes move-right {
+    from {
+        left: -20%;
+    }
+    to {
+        left: 100%;
+    }
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes move-up {
+    0% {
+        top: 50%;
+    }
+    50% {
+        top: 30%;
+    }
+    100% {
+        top: 50%;
+    }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes rotate {
+    0% {
+        transform: rotateZ(0);
+    }
+    50% {
+        transform: rotateZ(180deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
 }
